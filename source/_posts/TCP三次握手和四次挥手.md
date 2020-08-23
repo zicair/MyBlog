@@ -14,17 +14,17 @@ date: 2020-08-23 10:38:26
 
 # 1. TCP的基本认识，连接和断开
 
-![image-20200823104125368](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823104125368.png)
+![image-20200823104125368](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823104125368.png)
 
-![image-20200823104232334](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823104232334.png)
+![image-20200823104232334](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823104232334.png)
 
-![image-20200823104247701](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823104247701.png)
+![image-20200823104247701](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823104247701.png)
 
 # 2. TCP基本认识
 
 ## 2.1 TCP 头格式
 
-![image-20200823104412931](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823104412931.png)
+![image-20200823104412931](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823104412931.png)
 
 **序列号**：在建立连接时由计算机生成的随机数作为其初始值，通过 SYN 包传给接收端主机，每发送一次数据，就「累加」一次该「数据字节数」的大小。**用来解决网络包乱序问题。**
 
@@ -41,13 +41,13 @@ date: 2020-08-23 10:38:26
 
 `IP` 层是「不可靠」的，它不保证网络包的交付、不保证网络包的按序交付、也不保证网络包中的数据的完整性。如果需要保障网络数据包的可靠性，那么就需要由上层（传输层）的 `TCP` 协议来负责。因为 TCP 是一个工作在**传输层**的**可靠**数据传输的服务，它能确保接收端接收的网络包是**无损坏、无间隔、非冗余和按序的。**
 
-![image-20200823104522138](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823104522138.png)
+![image-20200823104522138](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823104522138.png)
 
 ## 2.3 什么是 TCP ？
 
 TCP 是**面向连接的、可靠的、基于字节流**的传输层通信协议。
 
-![image-20200823104732361](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823104732361.png)
+![image-20200823104732361](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823104732361.png)
 
 - **面向连接**：一定是「一对一」才能连接，不能像 UDP 协议 可以一个主机同时向多个主机发送消息，也就是一对多是无法做到的；
 - **可靠的**：无论的网络链路中出现了怎样的链路变化，TCP 都可以保证一个报文一定能够到达接收端；
@@ -65,7 +65,7 @@ TCP 是**面向连接的、可靠的、基于字节流**的传输层通信协议
 
 简单来说就是，**用于保证可靠性和流量控制维护的某些状态信息，这些信息的组合，包括Socket、序列号和窗口大小称为连接。**
 
-![image-20200823105253862](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823105253862.png)
+![image-20200823105253862](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823105253862.png)
 
 所以我们可以知道，建立一个 TCP 连接是需要客户端与服务器端达成上述三个信息的共识。
 
@@ -82,7 +82,7 @@ TCP 四元组可以唯一的确定一个连接，四元组包括如下：
 - 目的地址
 - 目的端口
 
-![image-20200823105648719](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823105648719.png)
+![image-20200823105648719](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823105648719.png)
 
 源地址和目的地址的字段（32位）是在 IP 头部中，作用是通过 IP 协议发送报文给对方主机。
 
@@ -94,7 +94,7 @@ TCP 四元组可以唯一的确定一个连接，四元组包括如下：
 
 因此，客户端 IP 和 端口是可变的，其理论值计算公式如下:
 
-![image-20200823105804111](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823105804111.png)
+![image-20200823105804111](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823105804111.png)
 
 对 IPv4，客户端的 IP 数最多为 `2` 的 `32` 次方，客户端的端口数最多为 `2` 的 `16`次方，也就是服务端单机最大 TCP 连接数，约为 `2` 的 `48` 次方。
 
@@ -109,7 +109,7 @@ UDP 不提供复杂的控制机制，利用 IP 提供面向「无连接」的通
 
 UDP 协议真的非常简，头部只有 `8` 个字节（ 64 位），UDP 的头部格式如下：
 
-![image-20200823105928135](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823105928135.png)
+![image-20200823105928135](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823105928135.png)
 
 - 目标和源端口：主要是告诉 UDP 协议应该把报文发给哪个进程。
 - 包长度：该字段保存了 UDP 首部的长度跟数据的长度之和。
@@ -163,7 +163,7 @@ UDP 协议真的非常简，头部只有 `8` 个字节（ 64 位），UDP 的头
 
 先说说 TCP 是如何计算负载数据长度：
 
-![image-20200823110416536](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823110416536.png)
+![image-20200823110416536](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823110416536.png)
 
 其中 IP 总长度 和 IP 首部长度，在 IP 首部格式是已知的。TCP 首部长度，则是在 TCP 首部格式已知的，所以就可以求得 TCP 数据的长度。
 
@@ -181,19 +181,19 @@ UDP 协议真的非常简，头部只有 `8` 个字节（ 64 位），UDP 的头
 
 TCP 是面向连接的协议，所以使用 TCP 前必须先建立连接，而**建立连接是通过三次握手而进行的。**
 
-![image-20200823110505247](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823110505247.png)
+![image-20200823110505247](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823110505247.png)
 
 一开始，客户端和服务端都处于 `CLOSED` 状态。先是服务端主动监听某个端口，处于 `LISTEN` 状态
 
-![image-20200823110546549](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823110546549.png)
+![image-20200823110546549](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823110546549.png)
 
 客户端会随机初始化序号（`client_isn`），将此序号置于 TCP 首部的「序号」字段中，同时把 `SYN` 标志位置为 `1` ，表示 `SYN` 报文。接着把第一个 SYN 报文发送给服务端，表示向服务端发起连接，该报文不包含应用层数据，之后客户端处于 `SYN-SENT` 状态。
 
-![image-20200823110640134](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823110640134.png)
+![image-20200823110640134](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823110640134.png)
 
 服务端收到客户端的 `SYN` 报文后，首先服务端也随机初始化自己的序号（`server_isn`），将此序号填入 TCP 首部的「序号」字段中，其次把 TCP 首部的「确认应答号」字段填入 `client_isn + 1`, 接着把 `SYN` 和 `ACK` 标志位置为 `1`。最后把该报文发给客户端，该报文也不包含应用层数据，之后服务端处于 `SYN-RCVD` 状态。
 
-![image-20200823110704869](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823110704869.png)
+![image-20200823110704869](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823110704869.png)
 
 客户端收到服务端报文后，还要向服务端回应最后一个应答报文，首先该应答报文 TCP 首部 `ACK` 标志位置为 `1` ，其次「确认应答号」字段填入 `server_isn + 1` ，最后把报文发送给服务端，这次报文可以携带客户到服务器的数据，之后客户端处于 `ESTABLISHED` 状态。
 
@@ -207,7 +207,7 @@ TCP 是面向连接的协议，所以使用 TCP 前必须先建立连接，而**
 
 TCP 的连接状态查看，在 Linux 可以通过 `netstat -napt` 命令查看。
 
-![image-20200823110809756](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823110809756.png)
+![image-20200823110809756](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823110809756.png)
 
 ## 3.3 为什么是三次握手？不是两次、四次？
 
@@ -237,7 +237,7 @@ TCP 的连接状态查看，在 Linux 可以通过 `netstat -napt` 命令查看�
 
 网络环境是错综复杂的，往往并不是如我们期望的一样，先发送的数据包，就先到达目标主机，反而它很骚，可能会由于网络拥堵等乱七八糟的原因，会使得旧的数据包，先到达目标主机，那么这种情况下 TCP 三次握手是如何避免的呢？
 
-![640](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\640.jpg)
+![640](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手/640.jpg)
 
 客户端连续发送多次 SYN 建立连接的报文，在网络拥堵等情况下：
 
@@ -262,7 +262,7 @@ TCP 协议的通信双方， 都必须维护一个「序列号」， 序列号�
 
 可见，序列号在 TCP 连接中占据着非常重要的作用，所以当客户端发送携带「初始序列号」的 `SYN` 报文的时候，需要服务端回一个 `ACK` 应答报文，表示客户端的 SVN 报文已被服务端成功接收，那当服务端发送「初始序列号」给客户端的时候，依然也要得到客户端的应答回应，**这样一来一回，才能确保双方的初始序列号能被可靠的同步。**
 
-![image-20200823111219552](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823111219552.png)
+![image-20200823111219552](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823111219552.png)
 
 四次握手其实也能够可靠的同步双方的初始化序号，但由于**第二步和第三步可以优化成一步**，所以就成了「三次握手」。
 
@@ -274,7 +274,7 @@ TCP 协议的通信双方， 都必须维护一个「序列号」， 序列号�
 
 如果客户端的 `SYN` 阻塞了，重复发送多次 `SYN` 报文，那么服务器在收到请求后就会**建立多个冗余的无效链接，造成不必要的资源浪费。**
 
-![641](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\641.jpg)
+![641](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手/641.jpg)
 
 即两次握手会造成消息滞留情况下，服务器重复接受无用的连接请求 `SYN` 报文，而造成重复分配资源。
 
@@ -306,7 +306,7 @@ RFC1948 中提出了一个较好的初始化序列号 ISN 随机生成算法。
 
 我们先来认识下 MTU 和 MSS
 
-![image-20200823111609445](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823111609445.png)
+![image-20200823111609445](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823111609445.png)
 
 - `MTU`：一个网络包的最大长度，以太网中一般为 `1500` 字节；
 - `MSS`：除去 IP 和 TCP 头部之后，一个网络包所能容纳的 TCP 数据的最大长度；
@@ -325,7 +325,7 @@ RFC1948 中提出了一个较好的初始化序列号 ISN 随机生成算法。
 
 所以，为了达到最佳的传输效能 TCP 协议在**建立连接的时候通常要协商双方的 MSS 值**，当 TCP 层发现数据超过 MSS 时，则就先会进行分片，当然由它形成的 IP 包的长度也就不会大于 MTU ，自然也就不用 IP 分片了。
 
-![image-20200823111735774](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823111735774.png)
+![image-20200823111735774](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823111735774.png)
 
 经过 TCP 层分片后，如果一个 TCP 分片丢失后，**进行重发时也是以 MSS 为单位**，而不用重传所有的分片，大大增加了重传的效率。
 
@@ -333,7 +333,7 @@ RFC1948 中提出了一个较好的初始化序列号 ISN 随机生成算法。
 
 我们都知道 TCP 连接建立是需要三次握手，假设攻击者短时间伪造不同 IP 地址的 `SYN` 报文，服务端每接收到一个 `SVN` 报文，就进入`SYN_RCVD` 状态，但服务端发送出去的 `ACK + SYN` 报文，无法得到未知 IP 主机的 `ACK` 应答，久而久之就会**占满服务端的 SYN 接收队列（未连接队列）**，使得服务器不能为正常用户服务。
 
-![image-20200823112006816](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823112006816.png)
+![image-20200823112006816](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823112006816.png)
 
 *避免 SVN 攻击方式一*
 
@@ -365,7 +365,7 @@ net.ipv4.tcp_abort_on_overflow
 
 我们先来看下Linux 内核的 `SYN` （未完成连接建立）队列与 `Accpet` （已完成连接建立）队列是如何工作的？
 
-![image-20200823112059580](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823112059580.png)
+![image-20200823112059580](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823112059580.png)
 
 正常流程：
 
@@ -374,13 +374,13 @@ net.ipv4.tcp_abort_on_overflow
 - 服务端接收到 ACK 报文后，从「 SVN 队列」移除放入到「 Accept 队列」；
 - 应用通过调用 `accpet()` socket 接口，从「 Accept 队列」取出的连接。
 
-![image-20200823112128939](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823112128939.png)
+![image-20200823112128939](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823112128939.png)
 
 应用程序过慢：
 
 - 如果应用程序过慢时，就会导致「 Accept 队列」被占满。
 
-![image-20200823112201453](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823112201453.png)
+![image-20200823112201453](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823112201453.png)
 
 受到 SYN 攻击：
 
@@ -392,7 +392,7 @@ net.ipv4.tcp_abort_on_overflow
 net.ipv4.tcp_syncookies = 1
 ```
 
-![image-20200823112350596](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823112350596.png)
+![image-20200823112350596](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823112350596.png)
 
 - 当 「 SYN 队列」满之后，后续服务器收到 SYN 包，不进入「 SYN 队列」；
 - 计算出一个 `cookie` 值，再以 SYN + ACK 中的「序列号」返回客户端，
@@ -407,7 +407,7 @@ net.ipv4.tcp_syncookies = 1
 
 双方都可以主动断开连接，断开连接后主机中的「资源」将被释放。
 
-![image-20200823112548097](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823112548097.png)
+![image-20200823112548097](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823112548097.png)
 
 - 客户端打算关闭连接，此时会发送一个 TCP 首部 `FIN` 标志位被置为 `1` 的报文，也即 `FIN` 报文，之后客户端进入 `FIN_WAIT_1` 状态。
 - 服务端收到该报文后，就向客户端发送 `ACK` 应答报文，接着服务端进入 `CLOSED_WAIT` 状态。
@@ -466,7 +466,7 @@ TIME_WAIT 等待 2 倍的 MSL，比较合理的解释是：网络中可能存在
 
 假设 TIME-WAIT 没有等待时间或时间过短，被延迟的数据包抵达后会发生什么呢？
 
-![image-20200823113118808](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823113118808.png)
+![image-20200823113118808](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823113118808.png)
 
 - 如上图黄色框框服务端在关闭连接之前发送的 `SEQ = 301` 报文，被网络延迟了。
 - 这时有相同端口的 TCP 连接被复用后，被延迟的 `SEQ = 301` 抵达了客户端，那么客户端是有可能正常接收这个过期的报文，这就会产生数据错乱等严重的问题。
@@ -483,7 +483,7 @@ TIME_WAIT 等待 2 倍的 MSL，比较合理的解释是：网络中可能存在
 
 假设 TIME-WAIT 没有等待时间或时间过短，断开连接会造成什么问题呢？
 
-![image-20200823113344917](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823113344917.png)
+![image-20200823113344917](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823113344917.png)
 
 - 如上图红色框框客户端四次挥手的最后一个 `ACK` 报文如果在网络中被丢失了，此时如果客户端 `TIME-WAIT` 过短或没有，则就直接进入了 `CLOSE` 状态了，那么服务端则会一直处在 `LASE-ACK` 状态。
 - 当客户端发起建立连接的 `SYN` 请求报文后，服务端会发送 `RST` 报文给客户端，连接建立的过程就会被终止。
@@ -583,7 +583,7 @@ net.ipv4.tcp_keepalive_probes=9
 
 也就是说在 Linux 系统中，最少需要经过 2 小时 11 分 15 秒才可以发现一个「死亡」连接。
 
-![image-20200823113717712](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823113717712.png)
+![image-20200823113717712](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823113717712.png)
 
 这个时间是有点长的，我们也可以根据实际的需求，对以上的保活相关的参数进行设置。
 
@@ -599,7 +599,7 @@ net.ipv4.tcp_keepalive_probes=9
 
 ## 5.1 针对 TCP 应该如何 Socket 编程？
 
-![image-20200823113831598](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823113831598.png)
+![image-20200823113831598](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823113831598.png)
 
 - 服务端和客户端初始化 `socket`，得到文件描述符；
 - 服务端调用 `bind`，将绑定在 IP 地址和端口;
@@ -623,7 +623,7 @@ Linux内核中会维护两个队列：
 - 未完成连接队列（SYN 队列）：接收到一个 SYN 建立连接请求，处于 SYN_RCVD 状态；
 - 已完成连接队列（Accpet 队列）：已完成 TCP 三次握手过程，处于 ESTABLISHED 状态；
 
-![image-20200823114040793](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823114040793.png)
+![image-20200823114040793](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823114040793.png)
 
 ```
 int listen (int socketfd, int backlog)
@@ -640,7 +640,7 @@ int listen (int socketfd, int backlog)
 
 我们先看看客户端连接服务端时，发送了什么？
 
-![image-20200823114128800](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823114128800.png)
+![image-20200823114128800](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823114128800.png)
 
 - 客户端的协议栈向服务器端发送了 SYN 包，并告诉服务器端当前发送序列号 client_isn，客户端进入 SYNC_SENT 状态；
 - 服务器端的协议栈收到这个包之后，和客户端进行 ACK 应答，应答的值为 client_isn+1，表示对 SYN 包 client_isn 的确认，同时服务器也发送一个 SYN 包，告诉客户端当前我的发送序列号为 server_isn，服务器端进入 SYNC_RCVD 状态；
@@ -653,7 +653,7 @@ int listen (int socketfd, int backlog)
 
 我们看看客户端主动调用了 `close`，会发生什么？
 
-![image-20200823114322858](E:\MyBlog\source\_posts\TCP三次握手和四次挥手.assets\image-20200823114322858.png)
+![image-20200823114322858](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/TCP三次握手和四次挥手\image-20200823114322858.png)
 
 - 客户端调用 `close`，表明客户端没有数据需要发送了，则此时会向服务端发送 FIN 报文，进入 FIN_WAIT_1 状态；
 - 服务端接收到了 FIN 报文，TCP 协议栈会为 FIN 包插入一个文件结束符 `EOF` 到接收缓冲区中，应用程序可以通过 `read` 调用来感知这个 FIN 包。这个 `EOF` 会被**放在已排队等候的其他已接收的数据之后**，这就意味着服务端需要处理这种异常情况，因为 EOF 表示在该连接上再无额外数据到达。此时，服务端进入 CLOSE_WAIT 状态；
