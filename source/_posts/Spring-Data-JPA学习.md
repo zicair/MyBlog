@@ -1,5 +1,5 @@
 ---
-title: Spring Data JPA学习记录
+title: Spring Data JPA学习
 tags:
   - JPA
   - SpringBoot
@@ -14,7 +14,7 @@ date: 2020-08-24 16:41:22
 
 # 1. 回顾JDBC操作数据库
 
-![image-20200825114031552](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring Data JPA学习记录/image-20200825114031552.png)
+![image-20200825114031552](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring-Data-JPA学习/image-20200825114031552.png)
 
 ## 1.1 ORM思想
 
@@ -34,9 +34,9 @@ date: 2020-08-24 16:41:22
 
 jpa规范，由SUN公司定义，内部是由接口和抽象类组成，**JPA只是规范，虽然它也它体现了ORM的思想，但具体的实现是由一些具体的框架实现的。**
 
-![image-20200825114610394](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring Data JPA学习记录/image-20200825114610394.png)
+![image-20200825114610394](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring-Data-JPA学习/image-20200825114610394.png)
 
-![image-20200825114652198](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring Data JPA学习记录/image-20200825114652198.png)
+![image-20200825114652198](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring-Data-JPA学习/image-20200825114652198.png)
 
 ## 1.3 Spring Data JPA
 
@@ -46,7 +46,7 @@ Spring Data JPA是Spring提供的一套对JPA操作更加高级的封装，是�
 
 Spring Data是Spring 的一个子项目。用于简化数据库访问，支持NoSQL和关系数据库存储。其主要目标是使数据库的访问变得方便快捷。而`Spring Data JPA`只是其中的一个。
 
-![image-20200824170242205](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring Data JPA学习记录/image-20200824170242205.png)
+![image-20200824170242205](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring-Data-JPA学习/image-20200824170242205.png)
 
 # 2. Spring Data JPA
 
@@ -54,7 +54,7 @@ Spring Data是Spring 的一个子项目。用于简化数据库访问，支持No
 
 ## 2.1 JPA的特点
 
-![image-20200824170812538](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring Data JPA学习记录/image-20200824170812538.png)
+![image-20200824170812538](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring-Data-JPA学习/image-20200824170812538.png)
 
 1. Spring Data JPA使得那些以JPA接口为规范的应用更加方便， 致力于减少数据访问层（DAO）的开发量。
 
@@ -380,7 +380,7 @@ nativeQuery ：false（使用jpql查询） | true（使用本地查询：sql查�
 
 规则：
 
-![image-20200825122320853](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring Data JPA学习记录/image-20200825122320853.png)
+![image-20200825122320853](https://raw.githubusercontent.com/zicair/MyBlog/master/picbed/Spring-Data-JPA学习/image-20200825122320853.png)
 
 ### 5) 自定义条件查询
 
