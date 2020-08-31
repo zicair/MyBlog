@@ -1,7 +1,7 @@
 ---
 title: mysql笔记day3
 date: 2020-06-23 15:46:24
-tags: [mysql]
+tags: [转载]
 categories:
 - [mysql]
 ---

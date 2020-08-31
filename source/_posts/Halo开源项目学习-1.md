@@ -1,15 +1,17 @@
 ---
-title: Halo开源项目学学习-1
+title: Halo开源项目学习-1
 tags:
   - Java
   - Halo
   - SpringBoot
 categories:
   - SpringBoot
-date: 2020-08-31 23:02:07
+date: 2020-08-31 23:31:07
 ---
 
 Halo是使用Java语言开发的一个博客系统，基于SpringBoot框架。这里下载使用的是`halo-1.0.0-beta.7`的版本。
+
+<!--more-->
 
 # 1. 查看配置
 
