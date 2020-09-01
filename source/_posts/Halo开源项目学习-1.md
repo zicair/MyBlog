@@ -375,4 +375,54 @@ public OptionServiceImpl(OptionRepository optionRepository,
 
 ## initThemes()
 
-未完待续。。。
+```java
+private void initThemes() {
+        // Whether the blog has initialized
+        // 同样从listOptions中获取相应的键值
+        Boolean isInstalled = optionService.getByPropertyOrDefault(PrimaryProperties.IS_INSTALLED, Boolean.class, false);
+
+        if (haloProperties.isProductionEnv() && isInstalled) {
+            // 如果已经安装直接返回
+            return;
+        }
+
+        try {
+            String themeClassPath = ResourceUtils.CLASSPATH_URL_PREFIX + ThemeService.THEME_FOLDER;
+            // themeClassPath: classpath:templates/themes
+            URI themeUri = ResourceUtils.getURL(themeClassPath).toURI();
+            // file:/E:/JAVAcode/halo-1.0.0 beta.7/out/production/resources/templates/themes
+            log.debug("Theme uri: [{}]", themeUri);
+
+            Path source;
+            // "file".equalsIgnoreCase...
+            if (themeUri.getScheme().equalsIgnoreCase("jar")) {
+                // Create new file system for jar
+                FileSystem fileSystem = FileSystems.newFileSystem(themeUri, Collections.emptyMap());
+                source = fileSystem.getPath("/BOOT-INF/classes/" + ThemeService.THEME_FOLDER);
+            } else { // E:\JAVAcode\halo-1.0.0-beta.7\out\production\resources\templates\themes
+                source = Paths.get(themeUri);
+            }
+
+            // Create theme folder
+            // C:\Users\zzt\.halo\templates\themes
+            Path themePath = themeService.getBasePath();
+
+            if (!haloProperties.isProductionEnv() || Files.notExists(themePath)) {
+                FileUtils.copyFolder(source, themePath);
+                log.info("Copied theme folder from [{}] to [{}]", source, themePath);
+            } else {
+                log.info("Skipped copying theme folder due to existence of theme folder");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Initialize internal theme to user path error", e);
+        }
+    }
+```
+
+themeService.getBasePath()方法中返回`ThemeServiceImpl`中的themeWorkDir
+
+而`ThemeServiceImpl`实现类中的构造器初始化了themeWorkDir路径：C:\Users\zzt\.halo\templates\themes
+
+```java
+themeWorkDir = Paths.get(haloProperties.getWorkDir(), THEME_FOLDER);
+```
